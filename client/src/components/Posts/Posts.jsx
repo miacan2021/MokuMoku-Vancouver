@@ -1,6 +1,6 @@
 import { Post } from "./Post"
 import { useSelector } from "react-redux"
-import { Grid, CircularProgress, Typography } from "@mui/material"
+import { Grid, Typography } from "@mui/material"
 
 export const Posts = () => {
     const events = useSelector((state) => state.events)

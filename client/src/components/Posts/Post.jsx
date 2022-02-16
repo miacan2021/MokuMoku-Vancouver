@@ -1,9 +1,4 @@
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
-import CardActions from '@mui/material/CardActions';
-import { Typography } from '@mui/material';
+import { CardMedia, Card, CardContent, Button, CardActions, Typography } from '@mui/material';
 import moment from 'moment';
 import { Link } from 'react-router-dom';
 

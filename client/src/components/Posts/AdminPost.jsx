@@ -1,8 +1,4 @@
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import Button from '@mui/material/Button';
-import CardActions from '@mui/material/CardActions';
-import { Typography } from '@mui/material';
+import { Card, CardContent, Button, CardActions, Typography } from '@mui/material';
 import moment from 'moment';
 import { useDispatch } from 'react-redux';
 import { deleteEvent } from '../../actions/posts';

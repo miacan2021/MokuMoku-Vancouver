@@ -1,13 +1,12 @@
-import { useState, useEffect} from "react";
+import { useState } from "react";
 import { signInWithEmailAndPassword, signOut } from "firebase/auth";
 import { auth } from './firebase-config'
-import { Container, Grid, Typography, Button } from "@mui/material"
+import { Link } from 'react-router-dom'
 import { useSelector } from "react-redux"
 import Form from "./components/Form/Form";
 import { AdminPost } from "./components/Posts/AdminPost";
-import {Link} from 'react-router-dom'
 import { Box } from "@mui/system";
-import TextField from '@mui/material/TextField';
+import { Container, Grid, Typography, Button, TextField } from "@mui/material"
 
 
 const Admin = () => {
@@ -25,13 +24,10 @@ const Admin = () => {
     await setUser('')
     await setPassword('')
   }
-
   const logout = async() => {
     await signOut(auth)
     await setInPage(false)
   }
-
-
   const [currentId, setCurrentId] = useState(null)
   const events = useSelector((state) => state.events)
 
