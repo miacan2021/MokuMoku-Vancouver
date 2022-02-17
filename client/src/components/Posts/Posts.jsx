@@ -9,9 +9,10 @@ export const Posts = () => {
       <Typography>No Data</Typography>
     : 
     (
-      <Grid container alignItems="stretch" spacing={3}>
+      <Grid container spacing={1} sx={{m: 0, p: 0, width:'100%', justifyContent: 'center', alignItems: "center", '@media screen and (min-width: 40em)': {
+        justifyContent: 'start'}}}>
           {events.map(event => (
-            <Grid key={event._id} item xs={12} sm={3}>
+            <Grid key={event._id} item sm={12} md={4} sx={{mb: 2}}>
               <Post event={event} />
             </Grid>
           ))}

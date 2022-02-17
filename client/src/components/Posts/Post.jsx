@@ -7,7 +7,7 @@ export const Post = ({event}) => {
 
   return (
    <>
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{minWidth:250, maxWidth: 345, m: 'auto' }}>
       <CardMedia
         component="img"
         alt="green iguana"
@@ -23,7 +23,7 @@ export const Post = ({event}) => {
         </Typography>
       </CardContent>
       <CardActions>
-        <Link to={`/${event._id}`} state={event._id}><Button size="small" >More</Button></Link>
+        <Link to={`/${event._id}`} state={event._id} style={{ textDecoration:'none' }}><Button size="small" >More</Button></Link>
       </CardActions>
     </Card>
     </>
