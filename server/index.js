@@ -15,7 +15,7 @@ app.use(cors())
 app.use('/admin', adminRoutes)
 app.get('/', async(req, res)=>{
   const events = await Event.find().sort({
-    createdAt: 'desc' })
+    date: 'desc' })
     res.status(200).json(events)
   })
   

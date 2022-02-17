@@ -7,7 +7,7 @@ export const Post = ({event}) => {
 
   return (
    <>
-    <Card sx={{minWidth:250, maxWidth: 345, m: 'auto' }}>
+    <Card sx={{minWidth:220, maxWidth: 345, m: 'auto' }}>
       <CardMedia
         component="img"
         alt="green iguana"

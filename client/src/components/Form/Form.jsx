@@ -1,14 +1,22 @@
 import { useState, useEffect } from 'react';
 import { useSelector } from "react-redux"
-import TextField from '@mui/material/TextField';
 import DateTimePicker from '@mui/lab/DateTimePicker';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import DateAdapter from '@mui/lab/AdapterMoment';
 import FileBase from 'react-file-base64'
-import Button from '@mui/material/Button';
+import { Button, Box, TextField }from '@mui/material';
 import { useDispatch } from 'react-redux';
 import { createEvent, updateEvent, addMember } from '../../actions/posts';
 import { Paper, Grid, Typography } from "@mui/material"
+import { AdminBody, AdminHeading, AdminP, AdminSub, FormFlex,} from '../../style/admin';
+import DeleteForeverOutlinedIcon from '@mui/icons-material/DeleteForeverOutlined';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import { HeroP } from '../../style/home';
 
 
 const Form = ({currentId, setCurrentId}) => {
@@ -52,10 +60,12 @@ const Form = ({currentId, setCurrentId}) => {
 
   return (
     <div>
-      <Paper sx={{mx: "auto", maxWidth: 'sm', my: 8, p: 3 }}>
-        <Typography variant="h4" sx={{mb:3}}>{currentId ? "Edit" : "Add new"} event</Typography>
-      <form onSubmit={handleSubmit}>
-      <Grid container  spacing={3} direction="column" align="center">
+      <Paper sx={{mx: "auto", maxWidth: 'md', p: 2, width:'90vw', pb:5,  '@media screen and (min-width: 900px)': {p: 3} }}>
+      <AdminHeading>{currentId ? "Edit" : "Add new"} event</AdminHeading>
+      <FormFlex>
+      <form onSubmit={handleSubmit} style={{width:'100%'}}>
+      <AdminSub>Form</AdminSub>
+      <Grid container spacing={3} direction="column" align="center">
        <Grid item xs={12} >
        <TextField 
        id="outlined-basic" 
@@ -90,6 +100,15 @@ const Form = ({currentId, setCurrentId}) => {
        onChange={(e) => setEventData({...eventData, map: e.target.value})}
        />
        </Grid>
+        <Grid item xs={12}>
+        <FileBase
+          name="image"
+          type="file"
+          multiple={false}
+          onDone={({base64}) => setEventData({...eventData, image: base64})}
+          value={eventData.image}
+          />
+   </Grid>
      <Grid item xs={12}>
        <TextField 
        id="outlined-basic" 
@@ -112,34 +131,35 @@ const Form = ({currentId, setCurrentId}) => {
           />
         </LocalizationProvider>
               </Grid>
-              <Grid item xs={12}>
-        <FileBase
-          name="image"
-          type="file"
-          multiple={false}
-          onDone={({base64}) => setEventData({...eventData, image: base64})}
-          value={eventData.image}
-          />
-   </Grid>
    <Grid item xs={12}>
            <Button variant="contained" type='submit' sx={{mr:3}}>Submit</Button>
            <Button variant="contained" onClick={clear}>Clear</Button>
       </Grid>
-           </Grid>
-          </form>
-        <h1>Members</h1>
-          <Grid item xs={12}>
+    </Grid>
+    </form>
+    {currentId &&
+    <Box sx={{width:'80%', display:'flex', flexDirection:'column', alignItems:'center', mx:'auto'}}>
+    <AdminSub>Members</AdminSub>
+    <TableContainer sx={{width:'80%'}}>
+   <Table>
+      <TableBody>
      {memberArr && memberArr.map(m => (
-      <div key={m.twitterId}>
-      <p>{m.name}</p>
-       <button onClick={() => delMember(m.twitterId)}>delete</button>
-      </div>
+        <TableRow
+        key={m.twitterId}
+        sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+      >
+      <TableCell align="right"><AdminP>{m.name}</AdminP></TableCell>
+      <TableCell align="right"><Button onClick={() => delMember(m.twitterId)}><DeleteForeverOutlinedIcon /></Button></TableCell>
+       </TableRow>
       ))
-      }
-     
-   </Grid>
-          </Paper>
-          
+    }
+     </TableBody>
+      </Table>
+      </TableContainer>
+    </Box>
+    }
+   </FormFlex>
+  </Paper>
     </div>
   )
 }
