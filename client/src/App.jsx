@@ -4,14 +4,17 @@ import { Posts } from './components/Posts/Posts'
 import { Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { getEvents } from './actions/posts'
+import flow from './flow.json'
 import {
   Body,
+  CalenderTitle,
   HeroHeading,
   HeroImg,
   HeroP,
   Logo,
-  LogoWrapper,
 } from './style/home'
+import { CardComponent } from './components/Card'
+import { FlowOder } from './style/card'
 
 function App() {
   const dispatch = useDispatch()
@@ -22,13 +25,6 @@ function App() {
 
   return (
     <Body>
-      <LogoWrapper>
-        <Logo>
-          MokuMoku
-          <br />
-          Vancouver
-        </Logo>
-      </LogoWrapper>
       <Box
         sx={{ width: '80vw', maxWidth: 1100, m: 'auto' }}
         display="flex"
@@ -39,15 +35,14 @@ function App() {
         <Grid
           container
           sx={{
-            m: 0,
-            p: 0,
             width: '100%',
             alignItems: 'center',
             justifyContent: 'center',
             boxShadow: 2,
             background: '#fffffe',
             borderRadius: '5px',
-            m: 3,
+            mx: 3,
+            my: 5,
             p: 2,
             overflow: 'hidden',
           }}
@@ -82,6 +77,11 @@ function App() {
             xs={12}
             md={6}
           >
+            <Logo>
+              MokuMoku
+              <br />
+              Vancouver
+            </Logo>
             <HeroHeading>Won't you join Mokumoku-kai in Vancouver?</HeroHeading>
             <HeroP>
               Mokumoku-kai is a group of participants who gather to study, work,
@@ -89,9 +89,28 @@ function App() {
               Mokumoku means "silently", Kai means "meeting". Don't you want to
               have a productive weekend? Let's join MokuMoku Vancouver!
             </HeroP>
+            <FlowOder>
+            <Button size="small" href='#join' sx={{p: 1, fontSize:'16px', color:'#fff', background: '#ef4565', ":hover":{color:'#ef4565'}}}>How to join?</Button>
+            <Button size="small" href='#events' sx={{p: 1, fontSize:'16px', color:'#fff', background: '#ef4565', ":hover":{color:'#ef4565'}}}>Check schedule</Button>
+            </FlowOder>
           </Grid>
         </Grid>
-        <Container>
+        <CalenderTitle id="join">How to join?</CalenderTitle>
+        <Grid container spacing={2} sx={{
+        mx: 0,
+        my: 5,
+        p: 0,
+        width: '100%',
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}>
+          {flow.map((todo, i) => (
+            <Grid item key={todo.img}>
+              <CardComponent todo={todo} i={i} />
+            </Grid>
+          ))}
+        </Grid>
+        <Container id="events">
           <Posts />
         </Container>
         <Box sx={{ py: 5 }}>

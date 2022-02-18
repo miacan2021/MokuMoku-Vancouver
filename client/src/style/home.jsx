@@ -5,11 +5,12 @@ export const Body = styled.div`
     width: 100vw;
     height: auto;
     min-height: 100vh;
+    max-width: 1800px;
     margin:0;
     padding:0;
     background-color:#d8eefe;
     color: #5f6c7b;
-`
+    `
 
 export const HeroImg = styled.img`
     width: 500px;
@@ -21,10 +22,6 @@ export const HeroImg = styled.img`
         width: 300px;
         background-size: 300px;
        }
-`
-
-export const LogoWrapper = styled.div`
-    margin: auto;
 `
 
 
@@ -69,14 +66,72 @@ export const Logo = styled.h1`
 `
 
 export const HeroHeading = styled.h1`
- font-family: 'Mukta', sans-serif;
+    font-family: 'Karla', sans-serif;
+letter-spacing: 1px;
+line-height: 50px;
  font-size: 28px;
+ color: #094067;
+ @media (max-width: 765px) {
+  line-height: 35px;
+  font-size: 25px;
+
+       }
 `
 
 export const HeroP = styled.p`
-    font-family: 'Karla', sans-serif;
+ font-family: 'Mukta', sans-serif;
+
     font-size: 18px;
+    color:#5f6c7b;
+    margin: 0;
+    padding-bottom: 30px;
+    @media (max-width: 765px) {
+  font-size: 16px;
+
+       }
 `
+
+export const CalenderTitle = styled.h2`
+    position: relative;
+    font-family: 'Karla', sans-serif;
+    color:#094067;
+    text-align: center;
+    letter-spacing: 5px;
+    background-color: rgb(255,255,255,0.5);
+  padding: 1.5rem 2rem;
+  border-bottom: 3px solid #094067;
+  border-left: 3px solid #094067;
+  border-radius: 20px;
+  
+&:before {
+  position: absolute;
+  right: 50px;
+  bottom: -21px;
+  width: 0;
+  height: 0;
+  content: '';
+  border-width: 21px 21px 0 0;
+  border-style: solid;
+  border-color: #5f6c7b transparent transparent transparent;
+}
+
+&:after {
+  position: absolute;
+  right: 54px;
+  bottom: -14px;
+  width: 0;
+  height: 0;
+  content: '';
+  border-width: 14px 14px 0 0;
+  border-style: solid;
+  border-color: #ef4565 transparent transparent transparent;
+}
+@media (max-width: 765px) {
+        letter-spacing: 2px;
+        font-size: 20px;
+       }
+`
+
 
 // font-family: 'Karla', sans-serif;
 // font-family: 'Mukta', sans-serif;
