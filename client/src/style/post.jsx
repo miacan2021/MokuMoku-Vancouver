@@ -51,5 +51,5 @@ font-weight: bold;
   font-size: 26px;
   margin: 0;
   letter-spacing: 7px;
-
+ padding-left: 10px;
 `

@@ -1,6 +1,6 @@
 import { Post } from './Post'
 import { useSelector } from 'react-redux'
-import { Grid, Typography } from '@mui/material'
+import { Grid, CircularProgress } from '@mui/material'
 import { CalenderTitle } from '../../style/home'
 
 export const Posts = () => {
@@ -8,7 +8,7 @@ export const Posts = () => {
   const postEvents = events.slice(0, 6)
 
   return !events.length ? (
-    <Typography>No event Data</Typography>
+    <CircularProgress />
   ) : (
     <>
     <CalenderTitle>Calendar of MokuMoku Vancouver</CalenderTitle>

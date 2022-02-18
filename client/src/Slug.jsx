@@ -16,9 +16,8 @@ import {
   Paper,
   TextField,
   Alert,
-  Container,
 } from '@mui/material'
-import { Body, HeroP } from './style/home'
+import { Body} from './style/home'
 import {
   BtnContainer,
   DetailContainer,
@@ -27,7 +26,9 @@ import {
   SlugSub,
 } from './style/slug'
 import { Link } from 'react-router-dom'
-import { AdminP, AdminSub } from './style/admin'
+import { AdminP } from './style/admin'
+import remarkGfm from 'remark-gfm'
+
 
 export const Slug = () => {
   const location = useLocation()
@@ -52,7 +53,7 @@ export const Slug = () => {
       <SlugConteiner>
         <DetailContainer>
           <AdminP>
-            <ReactMarkdown>{event.description}</ReactMarkdown>
+            <ReactMarkdown remarkPlugins={[remarkGfm]} >{event.description}</ReactMarkdown>
           </AdminP>
           {event.map && (
             <>
@@ -71,7 +72,7 @@ export const Slug = () => {
             component={Paper}
             sx={{ maxWidth: 300, m: 'auto', p: 3, mb:3}}
           >
-            <SlugSub>Member</SlugSub>
+            <SlugSub>Member up to {event.limitNum}</SlugSub>
             <Table sx={{ maxWidth: 300, mx: 'auto' }}>
               <TableHead>
                 <TableRow>
