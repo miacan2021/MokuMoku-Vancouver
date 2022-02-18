@@ -133,6 +133,6 @@ export const CalenderTitle = styled.h2`
 `
 
 
-// font-family: 'Karla', sans-serif;
-// font-family: 'Mukta', sans-serif;
-// font-family: 'Staatliches', cursive;
+export const CopyRight = styled.p`
+ font-family: 'Mukta', sans-serif;
+ `

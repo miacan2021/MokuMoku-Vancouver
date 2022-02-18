@@ -8,6 +8,7 @@ import flow from './flow.json'
 import {
   Body,
   CalenderTitle,
+  CopyRight,
   HeroHeading,
   HeroImg,
   HeroP,
@@ -120,6 +121,7 @@ function App() {
             </Button>
           </Link>
         </Box>
+        <CopyRight>&copy; designed / created by shiho kazama.</CopyRight>
       </Box>
     </Body>
   )
