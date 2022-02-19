@@ -17,7 +17,7 @@ import {
   TextField,
   Alert,
 } from '@mui/material'
-import { Body} from './style/home'
+import { Body } from './style/home'
 import {
   BtnContainer,
   DetailContainer,
@@ -28,7 +28,6 @@ import {
 import { Link } from 'react-router-dom'
 import { AdminP } from './style/admin'
 import remarkGfm from 'remark-gfm'
-
 
 export const Slug = () => {
   const location = useLocation()
@@ -53,7 +52,9 @@ export const Slug = () => {
       <SlugConteiner>
         <DetailContainer>
           <AdminP>
-            <ReactMarkdown remarkPlugins={[remarkGfm]} >{event.description}</ReactMarkdown>
+            <ReactMarkdown remarkPlugins={[remarkGfm]}>
+              {event.description}
+            </ReactMarkdown>
           </AdminP>
           {event.map && (
             <>
@@ -70,7 +71,7 @@ export const Slug = () => {
         <DetailContainer>
           <TableContainer
             component={Paper}
-            sx={{ maxWidth: 300, m: 'auto', p: 3, mb:3}}
+            sx={{ maxWidth: 300, m: 'auto', p: 3, mb: 3 }}
           >
             <SlugSub>Member up to {event.limitNum}</SlugSub>
             <Table sx={{ maxWidth: 300, mx: 'auto' }}>
@@ -120,7 +121,15 @@ export const Slug = () => {
                 }
               />
               {memberNum <= event.limitNum ? (
-                <Button variant="contained" type="submit">
+                <Button
+                  sx={{
+                    color: '#fff',
+                    background: '#ef4565',
+                    ':hover': { color: '#ef4565' },
+                  }}
+                  variant="contained"
+                  type="submit"
+                >
                   submit
                 </Button>
               ) : (
@@ -133,11 +142,14 @@ export const Slug = () => {
         </DetailContainer>
       </SlugConteiner>
       <BtnContainer>
-      <Link to="/" style={{ textDecoration: 'none' }}>
-        <Button variant="contained">
-          Back
-        </Button>
-      </Link>
+        <Link to="/" style={{ textDecoration: 'none' }}>
+          <Button
+            sx={{ background: '#094067', ':hover': { background: '#90b4ce' } }}
+            variant="contained"
+          >
+            Back
+          </Button>
+        </Link>
       </BtnContainer>
     </Body>
   )

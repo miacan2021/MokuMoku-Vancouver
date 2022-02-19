@@ -7,9 +7,6 @@ export const PostTag = styled.p`
   margin: 0;
   letter-spacing: 1px;
   padding: 6px;
-  @media (max-width: 760px) {
-    font-size: 12px;
-  }
 `
 export const PostContent = styled.div`
   display: flex;
@@ -33,7 +30,6 @@ export const PostMonth = styled.p`
   font-size: 20px;
   margin: 0;
   letter-spacing: 6px;
- 
 `
 
 export const PostDay = styled.p`
@@ -42,14 +38,12 @@ export const PostDay = styled.p`
   font-size: 40px;
   margin: 0;
   letter-spacing: 7px;
-
 `
 
 export const PostTitle = styled.h1`
-font-family: 'Mukta', sans-serif;
-font-weight: bold;
-  font-size: 26px;
+  font-family: 'Mukta', sans-serif;
+  font-weight: bold;
+  font-size: 24px;
   margin: 0;
-  letter-spacing: 7px;
- padding-left: 10px;
+  letter-spacing: 5px;
 `

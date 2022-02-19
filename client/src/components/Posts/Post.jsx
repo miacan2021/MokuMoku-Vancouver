@@ -2,11 +2,8 @@ import { useEffect, useState } from 'react'
 import {
   CardMedia,
   Card,
-  CardContent,
   Button,
-  CardActions,
-  Typography,
-  Box
+  CardActions
 } from '@mui/material'
 import moment from 'moment'
 import { Link } from 'react-router-dom'
@@ -42,7 +39,7 @@ export const Post = ({ event }) => {
         sx={{
           minWidth: 300,
           maxWidth: 345,
-          minHeight: 280,
+          minHeight: 290,
           maxHeight: 400,
           m: 'auto',
           background: tag === 'past' ? 'rgb(0,0,0,0.1)': '#fff', 

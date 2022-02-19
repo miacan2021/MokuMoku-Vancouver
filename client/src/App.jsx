@@ -91,20 +91,48 @@ function App() {
               have a productive weekend? Let's join MokuMoku Vancouver!
             </HeroP>
             <FlowOder>
-            <Button size="small" href='#join' sx={{p: 1, fontSize:'16px', color:'#fff', background: '#ef4565', ":hover":{color:'#ef4565'}}}>How to join?</Button>
-            <Button size="small" href='#events' sx={{p: 1, fontSize:'16px', color:'#fff', background: '#ef4565', ":hover":{color:'#ef4565'}}}>Check schedule</Button>
+              <Button
+                size="small"
+                href="#join"
+                sx={{
+                  p: 1,
+                  fontSize: '16px',
+                  color: '#fff',
+                  background: '#ef4565',
+                  ':hover': { color: '#ef4565' },
+                }}
+              >
+                How to join?
+              </Button>
+              <Button
+                size="small"
+                href="#events"
+                sx={{
+                  p: 1,
+                  fontSize: '16px',
+                  color: '#fff',
+                  background: '#ef4565',
+                  ':hover': { color: '#ef4565' },
+                }}
+              >
+                Check schedule
+              </Button>
             </FlowOder>
           </Grid>
         </Grid>
         <CalenderTitle id="join">How to join?</CalenderTitle>
-        <Grid container spacing={2} sx={{
-        mx: 0,
-        my: 5,
-        p: 0,
-        width: '100%',
-        justifyContent: 'center',
-        alignItems: 'center',
-      }}>
+        <Grid
+          container
+          spacing={2}
+          sx={{
+            mx: 0,
+            my: 5,
+            p: 0,
+            width: '100%',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        >
           {flow.map((todo, i) => (
             <Grid item key={todo.img}>
               <CardComponent todo={todo} i={i} />
@@ -116,7 +144,13 @@ function App() {
         </Container>
         <Box sx={{ py: 5 }}>
           <Link to="/admin" style={{ textDecoration: 'none' }}>
-            <Button sx={{ background: '#90b4ce' }} variant="contained">
+            <Button
+              sx={{
+                background: '#094067',
+                ':hover': { background: '#90b4ce' },
+              }}
+              variant="contained"
+            >
               Admin Page
             </Button>
           </Link>
