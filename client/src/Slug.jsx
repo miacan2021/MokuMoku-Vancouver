@@ -16,6 +16,7 @@ import {
   Paper,
   TextField,
   Alert,
+  Box
 } from '@mui/material'
 import { Body } from './style/home'
 import {
@@ -71,7 +72,7 @@ export const Slug = () => {
         <DetailContainer>
           <TableContainer
             component={Paper}
-            sx={{ maxWidth: 300, m: 'auto', p: 3, mb: 3 }}
+            sx={{ maxWidth: 250, m: 'auto', p: 3, mb: 3 }}
           >
             <SlugSub>Member up to {event.limitNum}</SlugSub>
             <Table sx={{ maxWidth: 300, mx: 'auto' }}>
@@ -94,6 +95,7 @@ export const Slug = () => {
               </TableBody>
             </Table>
           </TableContainer>
+        
           <SlugSub>Join</SlugSub>
           {memberNum <= event.limitNum ? (
             <></>
@@ -102,7 +104,7 @@ export const Slug = () => {
               Sorry! All booked.
             </Alert>
           )}
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} style={{display:'flex'}}>
             <DetailContainer>
               <TextField
                 required
@@ -123,6 +125,7 @@ export const Slug = () => {
               {memberNum <= event.limitNum ? (
                 <Button
                   sx={{
+                    m: 1,
                     color: '#fff',
                     background: '#ef4565',
                     ':hover': { color: '#ef4565' },
@@ -139,6 +142,7 @@ export const Slug = () => {
               )}
             </DetailContainer>
           </form>
+  
         </DetailContainer>
       </SlugConteiner>
       <BtnContainer>

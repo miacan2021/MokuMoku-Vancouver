@@ -8,7 +8,10 @@ export const Posts = () => {
   const postEvents = events.slice(0, 6)
 
   return !events.length ? (
+    <>
+    <CalenderTitle>Calendar of MokuMoku Vancouver</CalenderTitle>
     <CircularProgress />
+    </>
   ) : (
     <>
     <CalenderTitle>Calendar of MokuMoku Vancouver</CalenderTitle>

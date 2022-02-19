@@ -61,7 +61,7 @@ export const Post = ({ event }) => {
             {event.title}
           </PostTitle>
         </PostContent>
-        <CardActions sx={{display:'flex', alignItems:'center', justifyContent: allBooked ? 'space-between' : 'end'}}>
+        <CardActions sx={{my:2 ,px:3, display:'flex', alignItems:'center', justifyContent: allBooked ? 'space-between' : 'flex-end'}}>
           {allBooked && <PostTag>All booked!</PostTag>}
           <Link
             to={`/${event._id}`}

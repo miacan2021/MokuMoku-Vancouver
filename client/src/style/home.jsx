@@ -5,7 +5,7 @@ export const Body = styled.div`
   height: auto;
   min-height: 100vh;
   max-width: 1800px;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   background-color: #d8eefe;
   color: #5f6c7b;
@@ -125,9 +125,22 @@ export const CalenderTitle = styled.h2`
   @media (max-width: 765px) {
     letter-spacing: 2px;
     font-size: 20px;
+    padding: 12px;
   }
 `
 
 export const CopyRight = styled.p`
   font-family: 'Mukta', sans-serif;
+`
+
+export const BtnOder = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  @media (max-width: 765px) {
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  }
 `

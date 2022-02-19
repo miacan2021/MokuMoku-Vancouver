@@ -7,6 +7,7 @@ import { getEvents } from './actions/posts'
 import flow from './flow.json'
 import {
   Body,
+  BtnOder,
   CalenderTitle,
   CopyRight,
   HeroHeading,
@@ -27,7 +28,8 @@ function App() {
   return (
     <Body>
       <Box
-        sx={{ width: '80vw', maxWidth: 1100, m: 'auto' }}
+        sx={{ width: '95vw', maxWidth: 1100, m: 'auto' ,
+        '@media screen and (min-width: 900px)': { width:'80vw', p:2}}}
         display="flex"
         justifyContent="center"
         alignItems="center"
@@ -90,7 +92,7 @@ function App() {
               Mokumoku means "silently", Kai means "meeting". Don't you want to
               have a productive weekend? Let's join MokuMoku Vancouver!
             </HeroP>
-            <FlowOder>
+            <BtnOder>
               <Button
                 size="small"
                 href="#join"
@@ -117,15 +119,14 @@ function App() {
               >
                 Check schedule
               </Button>
-            </FlowOder>
+            </BtnOder>
           </Grid>
         </Grid>
         <CalenderTitle id="join">How to join?</CalenderTitle>
         <Grid
           container
-          spacing={2}
           sx={{
-            mx: 0,
+            mx: 'auto',
             my: 5,
             p: 0,
             width: '100%',
@@ -134,7 +135,7 @@ function App() {
           }}
         >
           {flow.map((todo, i) => (
-            <Grid item key={todo.img}>
+            <Grid item key={todo.img} sx={{m:1}}>
               <CardComponent todo={todo} i={i} />
             </Grid>
           ))}

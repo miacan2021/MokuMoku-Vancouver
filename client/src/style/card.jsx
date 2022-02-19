@@ -9,6 +9,9 @@ export const CardContainer = styled.div`
   padding: 20px;
   min-height: 300px;
   color: #094067;
+  @media (max-width: 760px) {
+    width: 300px;
+  }
 `
 export const FlowOder = styled.div`
   display: flex;
