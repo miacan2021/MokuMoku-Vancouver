@@ -16,7 +16,6 @@ import {
   Logo,
 } from './style/home'
 import { CardComponent } from './components/Card'
-import { FlowOder } from './style/card'
 
 function App() {
   const dispatch = useDispatch()

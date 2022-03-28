@@ -20,8 +20,9 @@ export const Post = ({ event }) => {
 
   useEffect(() => {
     if (fromStartDate.includes('ago')) {
+      setTag('past')
       if(fromStartDate.includes('day')){
-         setTag('past')
+      setTag('past')
       }else{
       setTag('today')
       }
@@ -45,12 +46,13 @@ export const Post = ({ event }) => {
           background: tag === 'past' ? 'rgb(0,0,0,0.1)': '#fff', 
         }}
       >
+       
         <CardMedia
           component="img"
           alt="event image"
           height="140"
           image={event.image ? event.image : 'no-img.jpg'}
-          sx={{background:'#0000', opacity:tag === 'past' ?  0.5: 1}}
+          sx={{background:'#0000', opacity: tag === 'past' ?  0.5 : 1}}
         />
         <PostContent>
           <PostDate>
