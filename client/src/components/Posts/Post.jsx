@@ -18,14 +18,10 @@ export const Post = ({ event }) => {
   const month = date.split(' ')[0].slice(0,3)
   const day = date.split(' ')[1].slice(0, -3)
 
+  console.log(fromStartDate);
   useEffect(() => {
     if (fromStartDate.includes('ago')) {
       setTag('past')
-      if(fromStartDate.includes('day')){
-      setTag('past')
-      }else{
-      setTag('today')
-      }
     }else{
       setTag('future')
     }

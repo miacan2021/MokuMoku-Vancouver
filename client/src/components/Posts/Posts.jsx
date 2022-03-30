@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react'
 import { Post } from './Post'
 import { useSelector } from 'react-redux'
-import { Grid, Skeleton, Card } from '@mui/material'
+import { Grid} from '@mui/material'
 
 import { CalenderTitle } from '../../style/home'
-import { PostContent } from '../../style/post'
+import { SkeltonCard } from './SkeltonCard'
 
 export const Posts = () => {
   const events = useSelector((state) => state.events)
@@ -41,27 +41,17 @@ export const Posts = () => {
             </Grid>
           ))
         ) : (   
-        {Array(3).map((arr, i) => (
+          <>
           <Grid item sm={12} md={6} lg={4} sx={{ mb: 2 }}>
-            <Card
-              sx={{
-                minWidth: 300,
-                maxWidth: 345,
-                minHeight: 290,
-                maxHeight: 400,
-                m: 'auto',
-                background: '#fff',
-              }}
-            >
-              <Skeleton variant="rectangular" height={140} />
-              <PostContent>
-                <Skeleton animation="wave" width={'100%'} sx={{ m: 2 }} />
-                <Skeleton animation="wave" width={'100%'} sx={{ m: 2 }} />
-              </PostContent>
-              <Skeleton animation="wave" width={'90%'} sx={{ m: 2 }} />
-            </Card>
-          </Grid>)
-          )}
+            <SkeltonCard />
+          </Grid>
+          <Grid item sm={12} md={6} lg={4} sx={{ mb: 2 }}>
+          <SkeltonCard />
+        </Grid>
+        <Grid item sm={12} md={6} lg={4} sx={{ mb: 2 }}>
+        <SkeltonCard />
+      </Grid>
+      </>
         )}
       </Grid>
 
