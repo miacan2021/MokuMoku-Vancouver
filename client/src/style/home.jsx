@@ -122,7 +122,7 @@ export const CalenderTitle = styled.h2`
     content: '';
     border-width: 14px 14px 0 0;
     border-style: solid;
-    border-color: #ef4565 transparent transparent transparent;
+    border-color: #ffdc00 transparent transparent transparent;
   }
   @media (max-width: 765px) {
     letter-spacing: 2px;

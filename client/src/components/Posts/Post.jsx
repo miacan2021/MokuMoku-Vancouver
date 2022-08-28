@@ -1,32 +1,33 @@
 import { useEffect, useState } from 'react'
-import {
-  CardMedia,
-  Card,
-  Button,
-  CardActions
-} from '@mui/material'
+import { CardMedia, Card, Button, CardActions } from '@mui/material'
 import moment from 'moment'
 import { Link } from 'react-router-dom'
-import { PostContent, PostDate, PostDay, PostMonth, PostTag, PostTitle } from '../../style/post'
-
+import {
+  PostContent,
+  PostDate,
+  PostDay,
+  PostMonth,
+  PostTag,
+  PostTitle,
+} from '../../style/post'
 
 export const Post = ({ event }) => {
   const date = moment(event.date).format('MMMM Do, h:mm a')
   const [allBooked, setAllBooked] = useState(false)
   const fromStartDate = moment(event.date).fromNow()
   const [tag, setTag] = useState('')
-  const month = date.split(' ')[0].slice(0,3)
+  const month = date.split(' ')[0].slice(0, 3)
   const day = date.split(' ')[1].slice(0, -3)
 
-  console.log(fromStartDate);
+  console.log(fromStartDate)
   useEffect(() => {
     if (fromStartDate.includes('ago')) {
       setTag('past')
-    }else{
+    } else {
       setTag('future')
     }
-    if(event.members.length >= event.limitNum){
-        setAllBooked(true)
+    if (event.members.length >= event.limitNum) {
+      setAllBooked(true)
     }
   }, [event, fromStartDate])
 
@@ -39,36 +40,50 @@ export const Post = ({ event }) => {
           minHeight: 290,
           maxHeight: 400,
           m: 'auto',
-          background: tag === 'past' ? 'rgb(0,0,0,0.1)': '#fff', 
+          background: tag === 'past' ? 'rgb(0,0,0,0.1)' : '#fff',
         }}
       >
-       
         <CardMedia
           component="img"
           alt="event image"
           height="140"
           image={event.image ? event.image : 'no-img.jpg'}
-          sx={{background:'#0000', opacity: tag === 'past' ?  0.5 : 1}}
+          sx={{ background: '#0000', opacity: tag === 'past' ? 0.5 : 1 }}
         />
         <PostContent>
           <PostDate>
-           <PostMonth>{month}</PostMonth>
-           <PostDay>{day}</PostDay>
+            <PostMonth>{month}</PostMonth>
+            <PostDay>{day}</PostDay>
           </PostDate>
-          <PostTitle>
-            {event.title}
-          </PostTitle>
+          <PostTitle>{event.title}</PostTitle>
         </PostContent>
-        <CardActions sx={{my:2 ,px:3, display:'flex', alignItems:'center', justifyContent: allBooked ? 'space-between' : 'flex-end'}}>
+        <CardActions
+          sx={{
+            my: 2,
+            px: 3,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: allBooked ? 'space-between' : 'flex-end',
+          }}
+        >
           {allBooked && <PostTag>All booked!</PostTag>}
           <Link
             to={`/${event._id}`}
             state={event._id}
             style={{ textDecoration: 'none' }}
+          >
+            <Button
+              size="small"
+              sx={{
+                color: '#094067',
+                background: '#FFDC00',
+                ':hover': { color: '#FFDC00' },
+              }}
             >
-            <Button size="small" sx={{ color:'#fff', background: '#ef4565', ":hover":{color:'#ef4565'}}}>More</Button>
+              More
+            </Button>
           </Link>
-            </CardActions>
+        </CardActions>
       </Card>
     </>
   )

@@ -121,9 +121,9 @@ function App() {
                 sx={{
                   p: 1,
                   fontSize: '16px',
-                  color: '#fff',
-                  background: '#ef4565',
-                  ':hover': { color: '#ef4565' },
+                  color: '#094067',
+                  background: '#FFDC00',
+                  ':hover': { color: '#FFDC00' },
                 }}
               >
                 How to join?
@@ -134,9 +134,9 @@ function App() {
                 sx={{
                   p: 1,
                   fontSize: '16px',
-                  color: '#fff',
-                  background: '#ef4565',
-                  ':hover': { color: '#ef4565' },
+                  color: '#094067',
+                  background: '#FFDC00',
+                  ':hover': { color: '#FFDC00' },
                 }}
               >
                 Check schedule
@@ -165,8 +165,8 @@ function App() {
         <Container id="events">
           <Posts />
         </Container>
-        <CalenderTitle id="join">Thank you for your support!</CalenderTitle>
-        <Container>
+        <Container sx={{ mt: 5 }}>
+          <CalenderTitle>Thank you for your support!</CalenderTitle>
           <Bmc />
         </Container>
         <Box sx={{ py: 5 }}>

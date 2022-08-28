@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const PostTag = styled.p`
   font-family: 'Karla', sans-serif;
   font-size: 16px;
-  color: #ef4565;
+  color: #094067;
   margin: 0;
   letter-spacing: 1px;
   padding: 6px;

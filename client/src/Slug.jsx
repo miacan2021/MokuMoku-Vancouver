@@ -16,7 +16,7 @@ import {
   Paper,
   TextField,
   Alert,
-  Modal
+  Modal,
 } from '@mui/material'
 import { Body } from './style/home'
 import {
@@ -56,17 +56,23 @@ export const Slug = () => {
     <Body>
       <SlugHeading>{event.title}</SlugHeading>
       <SlugConteiner>
-        {showThankYou ? 
-<Modal
-  open={showThankYou}
-  onClose={() => setShowThankYou(false)}
-  sx={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}
->
-<Alert severity="success" color="info">
-  Thank you for booking!
-</Alert>
-</Modal>
-: <></>}
+        {showThankYou ? (
+          <Modal
+            open={showThankYou}
+            onClose={() => setShowThankYou(false)}
+            sx={{
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}
+          >
+            <Alert severity="success" color="info">
+              Thank you for booking!
+            </Alert>
+          </Modal>
+        ) : (
+          <></>
+        )}
         <DetailContainer>
           <AdminP>
             <ReactMarkdown remarkPlugins={[remarkGfm]}>
@@ -111,7 +117,7 @@ export const Slug = () => {
               </TableBody>
             </Table>
           </TableContainer>
-        
+
           <SlugSub>Join</SlugSub>
           {memberNum <= event.limitNum ? (
             <></>
@@ -120,7 +126,7 @@ export const Slug = () => {
               Sorry! All booked.
             </Alert>
           )}
-          <form onSubmit={handleSubmit} style={{display:'flex'}}>
+          <form onSubmit={handleSubmit} style={{ display: 'flex' }}>
             <DetailContainer>
               <TextField
                 required
@@ -142,9 +148,9 @@ export const Slug = () => {
                 <Button
                   sx={{
                     m: 1,
-                    color: '#fff',
-                    background: '#ef4565',
-                    ':hover': { color: '#ef4565' },
+                    color: '#094067',
+                    background: '#FFDC00',
+                    ':hover': { color: '#FFDC00' },
                   }}
                   variant="contained"
                   type="submit"
@@ -158,7 +164,6 @@ export const Slug = () => {
               )}
             </DetailContainer>
           </form>
-  
         </DetailContainer>
       </SlugConteiner>
       <BtnContainer>

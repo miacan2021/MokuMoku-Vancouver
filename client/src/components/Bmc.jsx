@@ -11,10 +11,9 @@ const Bmc = () => {
         padding: '5px',
       }}
     >
-      <h1>Buy me a coffee</h1>
-      <p>My Story</p>
-      <p>For students</p>
-      <p>Support us</p>
+      <h1>Support us</h1>
+      <h3>Buy me a coffee</h3>
+      <p>For students leaning web development</p>
       <p>Thanks Supporters!</p>
       <BmcCup src="/bmc-cup.png" alt="bmc-cup" />
       <p>+1500! Thanks!!</p>
