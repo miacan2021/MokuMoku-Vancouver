@@ -35,7 +35,7 @@ export const Posts = () => {
         }}
       >
         {haveEventsData ? (
-          postEvents.map((event) => (
+          postEvents.slice(0, 3).map((event) => (
             <Grid key={event._id} item sm={12} md={6} lg={4} sx={{ mb: 2 }}>
               <Post event={event} />
             </Grid>

@@ -13,10 +13,12 @@ export const Body = styled.div`
 
 export const HeroImg = styled.img`
   width: 500px;
+  height: 400px;
   background-image: url(hero.svg);
   background-repeat: no-repeat;
   background-size: 400px;
   background-position: bottom center;
+  object-fit: contain;
   @media (max-width: 900px) {
     width: 300px;
     background-size: 300px;
@@ -139,8 +141,39 @@ export const BtnOder = styled.div`
   align-items: center;
   gap: 10px;
   @media (max-width: 765px) {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+`
+
+export const BmcBanner = styled.img`
+  width: 13rem;
+  object-fit: contain;
+`
+
+export const BmcAreaLink = styled.a`
+  color: #094067;
+  font-family: 'Karla', sans-serif;
+`
+
+export const BmcHero = styled.div`
+  margin: 10px 0;
+  display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   flex-direction: column;
+  @media (max-width: 765px) {
+    margin: 0 auto;
+  }
+`
+
+export const HeroImgContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  @media (max-width: 765px) {
+    gap: 0px;
   }
 `

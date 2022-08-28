@@ -16,7 +16,7 @@ import {
   Paper,
   TextField,
   Alert,
-  Box
+  Modal
 } from '@mui/material'
 import { Body } from './style/home'
 import {
@@ -38,6 +38,7 @@ export const Slug = () => {
   const [memberNum, setMemberNum] = useState(event.members.length + 1)
   const dispatch = useDispatch()
   const date = moment(event.date).format('MMMM Do, h:mm a')
+  const [showThankYou, setShowThankYou] = useState(false)
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -45,12 +46,27 @@ export const Slug = () => {
     dispatch(addMember(event._id, event.members))
     setMemberNum((prev) => prev + 1)
     setMember({ name: '', twitterId: '' })
+    setShowThankYou(true)
+    setTimeout(() => {
+      setShowThankYou(false)
+    }, 3000)
   }
 
   return (
     <Body>
       <SlugHeading>{event.title}</SlugHeading>
       <SlugConteiner>
+        {showThankYou ? 
+<Modal
+  open={showThankYou}
+  onClose={() => setShowThankYou(false)}
+  sx={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}
+>
+<Alert severity="success" color="info">
+  Thank you for booking!
+</Alert>
+</Modal>
+: <></>}
         <DetailContainer>
           <AdminP>
             <ReactMarkdown remarkPlugins={[remarkGfm]}>

@@ -14,8 +14,13 @@ import {
   HeroImg,
   HeroP,
   Logo,
+  BmcBanner,
+  BmcAreaLink,
+  BmcHero,
+  HeroImgContainer,
 } from './style/home'
 import { CardComponent } from './components/Card'
+import Bmc from './components/Bmc'
 
 function App() {
   const dispatch = useDispatch()
@@ -27,8 +32,12 @@ function App() {
   return (
     <Body>
       <Box
-        sx={{ width: '95vw', maxWidth: 1100, m: 'auto' ,
-        '@media screen and (min-width: 900px)': { width:'80vw', p:2}}}
+        sx={{
+          width: '95vw',
+          maxWidth: 1200,
+          m: 'auto',
+          '@media screen and (min-width: 900px)': { width: '80vw', p: 2 },
+        }}
         display="flex"
         justifyContent="center"
         alignItems="center"
@@ -61,8 +70,21 @@ function App() {
             xs={12}
             md={6}
           >
-            <HeroImg src="hero.png" alt="hero-img" />
+            <HeroImgContainer>
+              <HeroImg src="hero.png" alt="hero-img" />
+              <BmcHero>
+                <a
+                  href="https://www.buymeacoffee.com/miacan2021"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <BmcBanner src="/bmc.png" alt="bmc-link" />
+                </a>
+                <BmcAreaLink href="#bmc">Why we need supports?</BmcAreaLink>
+              </BmcHero>
+            </HeroImgContainer>
           </Grid>
+
           <Grid
             item
             sx={{
@@ -88,8 +110,9 @@ function App() {
             <HeroP>
               Mokumoku-kai is a group of participants who gather to study, work,
               or read in silence. It's held in the developer community in Japan.
-              Mokumoku means "silently", Kai means "meeting". Don't you want to
-              have a productive weekend? Let's join MokuMoku Vancouver!
+              Mokumoku means "silently", Kai means "meeting". It's kinda
+              Japanese-style dev's meet-up in Vancouver, Canada. Don't you want
+              to have a productive weekend? Let's join MokuMoku Vancouver!
             </HeroP>
             <BtnOder>
               <Button
@@ -134,13 +157,17 @@ function App() {
           }}
         >
           {flow.map((todo, i) => (
-            <Grid item key={todo.img} sx={{m:1}}>
+            <Grid item key={todo.img} sx={{ m: 1 }}>
               <CardComponent todo={todo} i={i} />
             </Grid>
           ))}
         </Grid>
         <Container id="events">
           <Posts />
+        </Container>
+        <CalenderTitle id="join">Thank you for your support!</CalenderTitle>
+        <Container>
+          <Bmc />
         </Container>
         <Box sx={{ py: 5 }}>
           <Link to="/admin" style={{ textDecoration: 'none' }}>
