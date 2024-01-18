@@ -11,10 +11,10 @@ const Bmc = () => {
         padding: '5px',
       }}
     >
-      <h1>Support us</h1>
+      <h1>Support Students!</h1>
       <h3>Buy me a coffee</h3>
-      <p>For students leaning web development</p>
-      <p>Thanks Supporters!</p>
+      <p>You can support students</p>
+      <p>Thanks for your Supporters!</p>
       <BmcCup src="/bmc-cup.png" alt="bmc-cup" />
       <p>+1500! Thanks!!</p>
     </Container>

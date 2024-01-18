@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Post } from './Post'
 import { useSelector } from 'react-redux'
-import { Grid} from '@mui/material'
+import { Grid } from '@mui/material'
 
 import { CalenderTitle } from '../../style/home'
 import { SkeltonCard } from './SkeltonCard'
@@ -40,21 +40,20 @@ export const Posts = () => {
               <Post event={event} />
             </Grid>
           ))
-        ) : (   
+        ) : (
           <>
-          <Grid item sm={12} md={6} lg={4} sx={{ mb: 2 }}>
-            <SkeltonCard />
-          </Grid>
-          <Grid item sm={12} md={6} lg={4} sx={{ mb: 2 }}>
-          <SkeltonCard />
-        </Grid>
-        <Grid item sm={12} md={6} lg={4} sx={{ mb: 2 }}>
-        <SkeltonCard />
-      </Grid>
-      </>
+            <Grid item sm={12} md={6} lg={4} sx={{ mb: 2 }}>
+              <SkeltonCard />
+            </Grid>
+            <Grid item sm={12} md={6} lg={4} sx={{ mb: 2 }}>
+              <SkeltonCard />
+            </Grid>
+            <Grid item sm={12} md={6} lg={4} sx={{ mb: 2 }}>
+              <SkeltonCard />
+            </Grid>
+          </>
         )}
       </Grid>
-
     </>
   )
 }

@@ -29,6 +29,7 @@ app.post('/:id', async(req, res) => {
 
 const PORT = process.env.PORT|| 8000
 
-mongoose.connect(process.env.DB)
+mongoose.set("strictQuery", false);
+mongoose.connect(process.env.MONGO_URL)
   .then(() => app.listen(PORT, () => console.log(`Server Running on Port: http://localhost:${PORT}`)))
   .catch((error) => console.log(`${error} did not connect`))

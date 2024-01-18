@@ -75,9 +75,9 @@ export const Post = ({ event }) => {
             <Button
               size="small"
               sx={{
-                color: '#094067',
-                background: '#FFDC00',
-                ':hover': { color: '#FFDC00' },
+                color: '#ffff',
+                background: '#ef4565',
+                ':hover': { color: '#ffff', background: '#ef4565' },
               }}
             >
               More

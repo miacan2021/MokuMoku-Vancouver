@@ -148,9 +148,9 @@ export const Slug = () => {
                 <Button
                   sx={{
                     m: 1,
-                    color: '#094067',
-                    background: '#FFDC00',
-                    ':hover': { color: '#FFDC00' },
+                    color: '#ffff',
+                    background: '#ef4565',
+                    ':hover': { color: '#ffff', background: '#ef4565' },
                   }}
                   variant="contained"
                   type="submit"
